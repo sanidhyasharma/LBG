@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/productofnumbers',function(req,res){
-    let NumberOne = req.query.NumberOne;
-    let NumberTWo = req.query.NumberTwo;
+    let FirstNumber = req.query.FirstNumber;
+    let SecondNumber = req.query.SecondNumber;
 
-    const product = NumberOne * NumberTwo;
+    const product = FirstNumber * SecondNumber;
 
-    if(!product || isNaN(NumberOne) || isNaN(NumberTwo)){
+    if(!product || isNaN(FirstNumber) || isNaN(SecondNumber)){
         res.sendStatus(404);
         res.end("Not found");
     }
